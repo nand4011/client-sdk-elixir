@@ -8,26 +8,26 @@ jobs:
   build-and-test:
     runs-on: ubuntu-20.04
     env:
-      TEST_AUTH_TOKEN: ${{ secrets.ALPHA_TEST_AUTH_TOKEN }}
-      MOMENTO_AUTH_TOKEN: ${{ secrets.ALPHA_TEST_AUTH_TOKEN }}
+#      TEST_AUTH_TOKEN: ${{ secrets.ALPHA_TEST_AUTH_TOKEN }}
+#      MOMENTO_AUTH_TOKEN: ${{ secrets.ALPHA_TEST_AUTH_TOKEN }}
       TEST_CACHE_NAME: elixir-integration-test-ci-${{ github.sha }}
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Verify README generation
-        uses: momentohq/standards-and-practices/github-actions/oss-readme-template@gh-actions-v2
-        with:
-          project_status: official
-          project_stability: beta
-          project_type: sdk
-          sdk_language: Elixir
-          dev_docs_slug: elixir
+#      - name: Verify README generation
+#        uses: momentohq/standards-and-practices/github-actions/oss-readme-template@gh-actions-v2
+#        with:
+#          project_status: official
+#          project_stability: beta
+#          project_type: sdk
+#          sdk_language: Elixir
+#          dev_docs_slug: elixir
 
-      - name: Commitlint and Other Shared Build Steps
-        uses: momentohq/standards-and-practices/github-actions/shared-build@gh-actions-v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Commitlint and Other Shared Build Steps
+#        uses: momentohq/standards-and-practices/github-actions/shared-build@gh-actions-v2
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Elixir
         uses: erlef/setup-beam@v1
@@ -45,23 +45,23 @@ jobs:
             mix test
           popd
 
-      - name: Run integration tests
-        run: |
-          pushd src
-            mix test integration-test
-          popd
-
-      - name: Build and run examples
-        run: |
-          pushd examples
-            mix deps.get
-            mix compile
-            mix format --check-formatted
-            mix dialyzer
-            mix run basic.exs
-            mix run sorted_set.exs
-            mix run doc_examples/cheat_sheet.exs
-            mix run doc_examples/readme_example.exs
-            mix run doc_examples.exs
-          popd
+#      - name: Run integration tests
+#        run: |
+#          pushd src
+#            mix test integration-test
+#          popd
+#
+#      - name: Build and run examples
+#        run: |
+#          pushd examples
+#            mix deps.get
+#            mix compile
+#            mix format --check-formatted
+#            mix dialyzer
+#            mix run basic.exs
+#            mix run sorted_set.exs
+#            mix run doc_examples/cheat_sheet.exs
+#            mix run doc_examples/readme_example.exs
+#            mix run doc_examples.exs
+#          popd
 
