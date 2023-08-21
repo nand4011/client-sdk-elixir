@@ -32,6 +32,10 @@ jobs:
           package-name: client-sdk-elixir
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
 
+      - name: publish release check
+        run: |
+          echo "Publish release: ${{ steps.release.outputs.release_created }}"
+
       - name: Publish test
         run: |
           echo "Published version: ${{ steps.release.outputs.tag_name }}"
