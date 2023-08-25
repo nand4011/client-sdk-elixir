@@ -27,10 +27,6 @@ jobs:
         id: release
         with:
           token: ${{ secrets.ELIXIR_REPO_ACCESS_TOKEN }}
-          path: src
-          release-type: elixir
-          package-name: client-sdk-elixir
-          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
 
       - name: publish release check
         run: |
