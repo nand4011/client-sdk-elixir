@@ -38,7 +38,7 @@ jobs:
 
       - name: Publish test
         run: |
-          echo "Published version: ${{ steps.release.outputs.tag_name }}"
+          echo "Published version: ${{ steps.release.outputs.src--tag_name }}"
         if: ${{ steps.release.outputs.src--release_created }}
 
 #      - name: Publish to hex
