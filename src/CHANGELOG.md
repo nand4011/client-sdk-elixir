@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/nand4011/client-sdk-elixir/compare/v0.7.2...v0.7.3) (2023-08-25)
+
+
+### Miscellaneous
+
+* release-please 4 ([40561fa](https://github.com/nand4011/client-sdk-elixir/commit/40561fabcc0a1404199aa850538ee1a33f25b4fe))
+
 ## [0.7.2](https://github.com/nand4011/client-sdk-elixir/compare/v0.7.1...v0.7.2) (2023-08-25)
 
 
