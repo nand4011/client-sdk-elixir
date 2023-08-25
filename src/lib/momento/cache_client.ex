@@ -11,7 +11,7 @@ defmodule Momento.CacheClient do
 
   @moduledoc """
   Client to perform operations against a Momento cache.
-  Simple change for release please testing 2
+  Simple change for release please testing 3
   """
 
   @typedoc """

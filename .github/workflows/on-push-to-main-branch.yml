@@ -34,12 +34,12 @@ jobs:
 
       - name: publish release check
         run: |
-          echo "Publish release: ${{ steps.release.outputs.release_created }}"
+          echo "Publish release: ${{ steps.release.outputs.src--release_created }}"
 
       - name: Publish test
         run: |
           echo "Published version: ${{ steps.release.outputs.tag_name }}"
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs.src--release_created }}
 
 #      - name: Publish to hex
 #        if: ${{ steps.release.outputs.release_created }}
